@@ -6,4 +6,5 @@
  2. 猜出key長度後，就能對key的每一位當作single XOR各自擊破
   * 測試所有可能ascii碼，key的這一位，就是能產生最多英文正常用字的那個
   我寫的小程式：solve.py
+
 解得： *your flag is: 29a70d3fe359728436dde20c004879692776be22*
