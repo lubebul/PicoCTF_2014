@@ -32,7 +32,7 @@ for (i = 0; i <= strlen(new_password); ++i) {
   才會正常運行的原因。
  * 同理，也可以看到digits的邊界也超出了一格，這超出的一格會以**int長度為單位**複寫stack上緊鄰的東西，也就是password！
  * 注意到sizeof(int) = 4 byte, 而sizeof(char) = 1 byte，所以password的前四格會被覆寫成[1][0][0][0]，也就是說password變成了：*\x01*！
-那麼，接下來只剩下更改password的部份了。但很不幸的，這部份還沒有implement，我們需要找其他方法。
+ * 那麼，接下來只剩下更改password的部份了。但很不幸的，這部份還沒有implement，我們需要找其他方法。
  * 仔細看一下呼叫python的code：
 ```snprintf(cmd, sizeof(cmd), "python set_password.py \"%s\"", password);```
   是用相對路徑開啟，所以說不定我們能複製創一個set_password.py在另一個目錄下，印出flag：
