@@ -1,5 +1,6 @@
 # Repeated XOR
 拿到一個hex encoded的密文encrypt.txt，只知道是由XOR key加密的，key長度未知。
+
 解題思路：
  1. 固定長度的key，同一位加密同個字母會得到同樣的答案
   * 計算兩個重複字母的差，key的長度一定會是這些差的最小公倍數的因數
