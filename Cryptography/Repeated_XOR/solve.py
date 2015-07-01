@@ -52,7 +52,7 @@ def num_to_text(num):
 def solve(num):
     # guess key length
     for i in range(5, 20):
-        print "length=" + str(i) + ", " + str(count(num, i)) + " duplicates"
+        print "length=%d, having %d duplicates" % (i, count(num, i))
     print "type in the length you what to test:"
     l = int(raw_input())
     # break each of them
