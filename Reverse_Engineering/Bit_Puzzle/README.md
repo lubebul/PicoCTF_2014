@@ -1,5 +1,6 @@
  1. 使用objdump來看assembly code
- ```
+
+```
 $ objdump -d bitpuzzle
 ...
 8048502:	8d 5c 24 1c          	lea    0x1c(%esp),%ebx
@@ -9,14 +10,15 @@ $ objdump -d bitpuzzle
 8048530:	c7 44 24 04 50 00 00 	movl   $0x50,0x4(%esp)
 8048538:	89 1c 24             	mov    %ebx,(%esp)
 804853b:	e8 90 fe ff ff       	call   80483d0 <fgets@plt>
- ```
+```
  2. ```char *fgets(char *s, int size, FILE *stream)```
   * 把argument放到stack上的順序是**相反的**
   * ```mov    0x804a024,%eax; mov    %eax,0x8(%esp)``` -> stream
   * ```movl   $0x50,0x4(%esp)``` -> size
   * ```lea    0x1c(%esp),%ebx; mov    %ebx,(%esp)``` -> s
  3. 得知size = 80 byte，繼續看下去程式對input做了什麼：
- ```
+
+```
  8048540:	ba ff ff ff ff       	mov    $0xffffffff,%edx
 8048545:	89 df                	mov    %ebx,%edi; s -> edi
 8048547:	b8 00 00 00 00       	mov    $0x0,%eax
@@ -24,32 +26,32 @@ $ objdump -d bitpuzzle
 804854e:	f2 ae                	repnz scas %es:(%edi),%al; => %ecx = 0xffffffff - len(s)
 8048550:	f7 d1                	not    %ecx ; %ecx = len(s)
 8048552:	c6 44 0c 1a 00       	movb   $0x0,0x1a(%esp,%ecx,1); s[%ecx-1] = 0
- ```
+```
   * scas(scan string): 比較在al(=0) 和 es:edi的byte，如果相同就把status flag設1，不相同**decrement %ecx**
   * repnz：只要scas的status flag不相同就重複
   * 所以離開repnz，```%ecx = 0xffffffff - len(s)```
   * s 在```0x1C(%esp)```，所以```0x1A+%ecx+%esp```會指到len(s)-1
   * 可以看出這是常用的```s[len(s)-1] = 0```
  4. 繼續看下去：
- ```
+```
  8048557:	89 df                	mov    %ebx,%edi; s -> %edi
 8048559:	89 d1                	mov    %edx,%ecx
 804855b:	f2 ae                	repnz scas %es:(%edi),%al; %ecx = len(s)
 804855d:	83 f9 de             	cmp    $0xffffffde,%ecx
- ```
+```
   * ```cmp    $0xffffffde,%ecx```：如果```len(s) = 0x00000021```，就會compare成功
    * equal：```je     8048582 <__libc_start_main@plt+0x162>```，跳到```.text:8048582```
    * not equeal：印失敗訊息並呼叫exit
-   ```
+```
    8048562:	8d 44 24 1c          	lea    0x1c(%esp),%eax
    8048566:	89 44 24 04          	mov    %eax,0x4(%esp)
    804856a:	c7 04 24 f0 87 04 08 	movl   $0x80487f0,(%esp)
    8048571:	e8 4a fe ff ff       	call   80483c0 <printf@plt>
    8048576:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
    804857d:	e8 8e fe ff ff       	call   8048410 <exit@plt>
-   ```
+```
  5. 可以知道len(input string)必須 = 33 byte
- ```
+```
  8048582:	8b 54 24 1c          	mov    0x1c(%esp),%edx; %edx = s[0:4]
  8048586:	8b 44 24 20          	mov    0x20(%esp),%eax; %eax = s[4:8]
  804858a:	8b 7c 24 24          	mov    0x24(%esp),%edi; %edi = s[8:12]
@@ -111,7 +113,7 @@ $ objdump -d bitpuzzle
  8048699:	8d 04 40             	lea    (%eax,%eax,2),%eax
  804869c:	03 44 24 28          	add    0x28(%esp),%eax
  80486a0:	3d 91 9c cf b9       	cmp    $0xb9cf9c91,%eax; s[28:32]*3 + s[12:16] == 0xb9cf9c91?
- ```
+```
  * 會發現一系列的比較：
   1. ```s[4:8] + s[8:12] == 0xc0dcdfce```?
   2. ```s[0:4] + s[4:8] == 0xd5d3dddc```?
@@ -131,7 +133,7 @@ $ objdump -d bitpuzzle
   * s[20:24] & 0x70000000 == 0x70000000
   * s[20:24] = s[24:28] + 0xe000cec
  7. 寫個程式solve.c 解：
- ```
+```
 $ gcc solve.c -o solve
 $ ./solve
 solving_equations_is_lots_of_fun
