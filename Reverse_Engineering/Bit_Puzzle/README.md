@@ -23,13 +23,13 @@ $ objdump -d bitpuzzle
 804854c:	89 d1                	mov    %edx,%ecx; %ecx = 0xffffffff
 804854e:	f2 ae                	repnz scas %es:(%edi),%al; => %ecx = 0xffffffff - len(s)
 8048550:	f7 d1                	not    %ecx ; %ecx = len(s)
-8048552:	c6 44 0c 1a 00       	movb   $0x0,0x1a(%esp,%ecx,1); s[%ecx-1] = 0
+8048552:	c6 44 0c 1a 00       	movb   $0x0,0x1a(%esp,%ecx,1); s[%ecx] = 0
 ```
   * scas(scan string): 比較在al(=0) 和 es:edi的byte，如果相同就把status flag設1，不相同**decrement %ecx**
   * repnz：只要scas的status flag不相同就重複
   * 所以離開repnz，```%ecx = 0xffffffff - len(s)```
-  * s 在```0x1C(%esp)```，所以```0x1A+%ecx+%esp```會指到len(s)-1
-  * 可以看出這是常用的```s[len(s)-1] = 0```
+  * s 在```0x1C(%esp)```，所以```0x1A+%ecx+%esp```會指到len(s)
+  * 可以看出這是常用的```s[len(s)] = 0```
  * 繼續看下去：
 ```
 8048557:	89 df                	mov    %ebx,%edi; s -> %edi
