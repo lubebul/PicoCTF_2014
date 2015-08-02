@@ -19,7 +19,7 @@ $ objdump -d bitpuzzle
  3. 得知size = 80 byte，繼續看下去程式對input做了什麼：
 
 ```
- 8048540:	ba ff ff ff ff       	mov    $0xffffffff,%edx
+8048540:	ba ff ff ff ff       	mov    $0xffffffff,%edx
 8048545:	89 df                	mov    %ebx,%edi; s -> edi
 8048547:	b8 00 00 00 00       	mov    $0x0,%eax
 804854c:	89 d1                	mov    %edx,%ecx; %ecx = 0xffffffff
@@ -34,7 +34,7 @@ $ objdump -d bitpuzzle
   * 可以看出這是常用的```s[len(s)-1] = 0```
  4. 繼續看下去：
 ```
- 8048557:	89 df                	mov    %ebx,%edi; s -> %edi
+8048557:	89 df                	mov    %ebx,%edi; s -> %edi
 8048559:	89 d1                	mov    %edx,%ecx
 804855b:	f2 ae                	repnz scas %es:(%edi),%al; %ecx = len(s)
 804855d:	83 f9 de             	cmp    $0xffffffde,%ecx
