@@ -33,3 +33,4 @@ F
 U
 N
 ```
+詳見[solve.py](solve.py)

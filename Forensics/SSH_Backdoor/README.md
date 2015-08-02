@@ -1,6 +1,6 @@
 # SSH Backdoor
 提示：hacker留了後門，也許你可以拿來和openssh原始碼做比較？
- * 下載openssh-6.7，並使用 diff 察看hacker改了什麼檔案：
+ * 下載[openssh-6.7](openssh-6.7p1_origin.zip)，並使用 diff 察看hacker改了什麼檔案：
 ```
 $ diff openssh-6.7p1_pico openssh-6.7p1_origin/
 diff openssh-6.7p1_pico/auth.c openssh-6.7p1_origin/auth.c
@@ -68,7 +68,7 @@ DESCRIPTION
 ```
  * 重點：**The  effect can be reversed by using memfrob() on the encrypted
  memory area.**
- * 所以，寫了一個gen_password.c，對```"CGCDSE_XGKIBCDOY^OKFCDMSE_XLFKMY"```做一次memfrob
+ * 所以，寫了一個[程式](gen_password.c)，對```"CGCDSE_XGKIBCDOY^OKFCDMSE_XLFKMY"```做一次memfrob
   * 得到password = ```iminyourmachinestealingyourflags```
  * 拿去登入backdoor.picoctf.com：
 ```

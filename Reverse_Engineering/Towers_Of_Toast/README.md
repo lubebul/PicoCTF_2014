@@ -1,5 +1,5 @@
 # Towers of Toast
-拿到一個遊戲原始碼，flag在破關時才會自動產生。只要看懂代碼就能hack拿到flag。
+拿到一個[遊戲原始碼](Towers_of_Toast.java)，flag在破關時才會自動產生。只要看懂代碼就能hack拿到flag。
 ```java
 // 加在new 後面
 pole1.addAll(pole2);

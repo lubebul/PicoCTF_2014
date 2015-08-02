@@ -1,4 +1,4 @@
- * 使用objdump來看assembly code
+ * 使用objdump來看[bitpuzzle](bitpuzzle)的assembly code
 ```
 $ objdump -d bitpuzzle
 ...
@@ -130,7 +130,7 @@ $ objdump -d bitpuzzle
  * 如果直接暴力解組合太多，從constrain 9.10.11.下手：
   * s[20:24] & 0x70000000 == 0x70000000
   * s[20:24] = s[24:28] + 0xe000cec
- * 寫個程式solve.c 解：
+ * 寫個[程式](solve.c)解：
 ```
 $ gcc solve.c -o solve
 $ ./solve

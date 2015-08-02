@@ -1,5 +1,5 @@
 # Snapcat
-拿到一個的disk image，用hex editor看看，我使用的是[Bless Hex Editor](http://home.gna.org/bless/)。
+拿到一個的[disk image](disk.img)，用hex editor看看，我使用的是[Bless Hex Editor](http://home.gna.org/bless/)。
  1. 我們可以用開頭的 [file signature](http://en.wikipedia.org/wiki/List_of_file_signatures) 知道檔案類型，然後抓出完整的檔案來察看。
  找到的開頭有：
   * 55AAF8...F0FF：??

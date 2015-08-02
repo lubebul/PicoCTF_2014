@@ -7,5 +7,5 @@ RSA 加密演算法：
  加解密：```text = M，M < N```
  * encryption: ```C = M^e mode N```
  * decryption: ```M = C^d mode N```
-
-得到 Congratulations on decrypting an RSA message! Your flag is modular_arithmetics_not_so_bad_after_all
+ * [用程式實現](solve.py)
+得到 ```Congratulations on decrypting an RSA message! Your flag is modular_arithmetics_not_so_bad_after_all```
