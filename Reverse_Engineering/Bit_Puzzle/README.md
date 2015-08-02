@@ -1,5 +1,4 @@
- 1. 使用objdump來看assembly code
-
+ * 使用objdump來看assembly code
 ```
 $ objdump -d bitpuzzle
 ...
@@ -11,13 +10,12 @@ $ objdump -d bitpuzzle
 8048538:	89 1c 24             	mov    %ebx,(%esp)
 804853b:	e8 90 fe ff ff       	call   80483d0 <fgets@plt>
 ```
- 2. ```char *fgets(char *s, int size, FILE *stream)```
+ * ```char *fgets(char *s, int size, FILE *stream)```
   * 把argument放到stack上的順序是**相反的**
   * ```mov    0x804a024,%eax; mov    %eax,0x8(%esp)``` -> stream
   * ```movl   $0x50,0x4(%esp)``` -> size
   * ```lea    0x1c(%esp),%ebx; mov    %ebx,(%esp)``` -> s
- 3. 得知size = 80 byte，繼續看下去程式對input做了什麼：
-
+ * 得知size = 80 byte，繼續看下去程式對input做了什麼：
 ```
 8048540:	ba ff ff ff ff       	mov    $0xffffffff,%edx
 8048545:	89 df                	mov    %ebx,%edi; s -> edi
@@ -32,7 +30,7 @@ $ objdump -d bitpuzzle
   * 所以離開repnz，```%ecx = 0xffffffff - len(s)```
   * s 在```0x1C(%esp)```，所以```0x1A+%ecx+%esp```會指到len(s)-1
   * 可以看出這是常用的```s[len(s)-1] = 0```
- 4. 繼續看下去：
+ * 繼續看下去：
 ```
 8048557:	89 df                	mov    %ebx,%edi; s -> %edi
 8048559:	89 d1                	mov    %edx,%ecx
@@ -50,7 +48,7 @@ $ objdump -d bitpuzzle
    8048576:	c7 04 24 00 00 00 00 	movl   $0x0,(%esp)
    804857d:	e8 8e fe ff ff       	call   8048410 <exit@plt>
 ```
- 5. 可以知道len(input string)必須 = 33 byte
+ * 可以知道len(input string)必須 = 33 byte
 ```
  8048582:	8b 54 24 1c          	mov    0x1c(%esp),%edx; %edx = s[0:4]
  8048586:	8b 44 24 20          	mov    0x20(%esp),%eax; %eax = s[4:8]
@@ -129,10 +127,10 @@ $ objdump -d bitpuzzle
   12. ```s[16:20]*3 + s[28:32]*2 == 0x3726eb17```?
   13. ```s[28:32]*7 + s[8:12]*4 == 0x8b0b922d```?
   14. ```s[28:32]*3 + s[12:16] == 0xb9cf9c91```?
- 6. 如果直接暴力解組合太多，從constrain 9.10.11.下手：
+ * 如果直接暴力解組合太多，從constrain 9.10.11.下手：
   * s[20:24] & 0x70000000 == 0x70000000
   * s[20:24] = s[24:28] + 0xe000cec
- 7. 寫個程式solve.c 解：
+ * 寫個程式solve.c 解：
 ```
 $ gcc solve.c -o solve
 $ ./solve
