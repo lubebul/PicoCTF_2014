@@ -24,7 +24,7 @@ Personal Solutions
  * [Grep Is Still Your Friend - 40](Forensics/Grep_Is_Still_Your_Friend)
  * [Intercepted Post - 40](Forensics/Intercepted_Post)
  * [Pickle Jar - 30](Forensics/Pickle_Jar)
- * [PNG or Not? - 100](Forensics/PNG_or_Not?)
+ * [PNG or Not? - 100](Forensics/PNG_or_Not%3F)
  * [Redacted - 50](Forensics/Redacted)
  * [Snapcat - 80](Forensics/Snapcat)
  * [Spoof Proof - 60](Forensics/Spoof_Proof)
@@ -32,7 +32,7 @@ Personal Solutions
  * [Supercow - 40](Forensics/Supercow)
 
 ## Miscellaneous
- * [Common Vulnerability Exercise - 20](Miscellaneous/Common_Vulnearbility_Exercise)
+ * [Common Vulnerability Exercise - 20](Miscellaneous/Common_Vulnerability_Exercise)
  * [OBO - 90](Miscellaneous/OBO)
  * [RoboPhoto - 30](Miscellaneous/RoboPhoto)
  * [Tyrannosaurus Hex - 10](Miscellaneous/Tyrannosaurus_Hex)
@@ -43,10 +43,10 @@ Personal Solutions
  * [Cyborg Secrets - 80](Reverse_Engineering/Cyborg_Secrets)
  * [Function Address - 60](Reverse_Engineering/Function_Address)
  * [Tick Tock - 90](Reverse_Engineering/Tick_Tock)
- * [Towers of Toast - 90](Reverse_Engineering/Towers_of_Toast)
+ * [Towers of Toast - 90](Reverse_Engineering/Towers_Of_Toast)
 
 ## Web Exploitations
- * [Delicious! - 60](Web_Exploitation/Delicious)
+ * [Delicious! - 60](Web_Exploitation/Delicious!)
  * [Injection 1 - 90](Web_Exploitation/Injection_1)
  * [Injection 2 - 110](Web_Exploitation/Injection_2)
  * [Injection 3 - 130](Web_Exploitation/Injection_3)
