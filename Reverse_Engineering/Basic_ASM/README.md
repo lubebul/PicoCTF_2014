@@ -1,6 +1,8 @@
 # Basic ASM
-拿到一個[assembly code](snippet.txt)，參考資料說AT&T的格式是：<指令> src, dst，所以結果存在第2個operand。
+拿到一個[assembly code](snippet.txt)
+ * AT&T的格式：<instr> src, dst
  * 手動把assembly code轉成C code：
+
 ```c
 #include <stdio.h>
 

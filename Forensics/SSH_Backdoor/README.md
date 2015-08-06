@@ -68,9 +68,11 @@ DESCRIPTION
 ```
  * 重點：**The  effect can be reversed by using memfrob() on the encrypted
  memory area.**
- * 所以，寫了一個[程式](gen_password.c)，對```"CGCDSE_XGKIBCDOY^OKFCDMSE_XLFKMY"```做一次memfrob
-  * 得到password = ```iminyourmachinestealingyourflags```
- * 拿去登入backdoor.picoctf.com：
+
+## Solve
+ * 寫個[程式](gen_password.c)，對`CGCDSE_XGKIBCDOY^OKFCDMSE_XLFKMY`做`memfrob`
+ * 得到password = ```iminyourmachinestealingyourflags```
+ * 登入backdoor.picoctf.com：
 ```
 $ ssh jon@backdoor.picoctf.com
 jon@backdoor.picoctf.com's password:

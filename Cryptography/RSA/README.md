@@ -8,6 +8,6 @@ RSA 加密演算法：
  * encryption: ```C = M^e mode N```
  * decryption: ```M = C^d mode N```
 
- ## Solve
+## Solve
 詳見[solve.py](solve.py)
   * ```Congratulations on decrypting an RSA message! Your flag is modular_arithmetics_not_so_bad_after_all```

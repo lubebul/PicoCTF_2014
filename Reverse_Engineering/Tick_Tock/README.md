@@ -7,7 +7,10 @@
  2. 求整數num2，使得 ```(num ** num2) % 200009*160009 == 1```
    * 使用Euler's totient function theory:  <img src="euler's theory.png">
    * 因為200009和160009都是質數，所以 num2 = ```phi(200009*160009) = (200009-1)*(160009-1)```
- * [代碼實現](solve.py)
+
+## Solve
+詳見[solve.py](solve.py)
+
 ```
 $ python solve.py
 Congratulations! The flag is: 930969879919543277249858199448477560510863616444995705_32002880064
