@@ -59,4 +59,4 @@ Personal Solutions
  * [No Comment - 20](Web_Exploitation/No_Comment)
  * [Potentially Hidden Password - 100](Web_Exploitation/Potentially_Hidden_Password)
  * [secure_page_service - 100](Web_Exploitation/secure_page_service)
-  * [Toaster Control - 50](Web_Exploitation/Toaster_Control)
+ * [Toaster Control - 50](Web_Exploitation/Toaster_Control)
