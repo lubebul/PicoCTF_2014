@@ -7,8 +7,8 @@ Personal Solutions
  * [Guess - 75](Binary_Exploitation/Guess)
  * [Overflow 1 - 50](Binary_Exploitation/Overflow_1)
  * [Overflow 2 - 70](Binary_Exploitation/Overflow_2)
+ * [ROP 1 - 100](Binary_Exploitation/ROP_1)
  * [This Is The Endian - 40](Binary_Exploitation/This_Is_The_Endian)
- * [Toaster Control - 50](Binary_Exploitation/Toaster_Control)
  * [Write Right - 50](Binary_Exploitation/Write_Right)
 
 ## Cryptography
@@ -42,6 +42,7 @@ Personal Solutions
  * [Bit Puzzle - 130](Reverse_Engineering/Bit_Puzzle)
  * [Cyborg Secrets - 80](Reverse_Engineering/Cyborg_Secrets)
  * [Function Address - 60](Reverse_Engineering/Function_Address)
+ * [Netsino - 120](Netsino)
  * [Tick Tock - 90](Reverse_Engineering/Tick_Tock)
  * [Towers of Toast - 90](Reverse_Engineering/Towers_Of_Toast)
 
@@ -51,9 +52,11 @@ Personal Solutions
  * [Injection 2 - 110](Web_Exploitation/Injection_2)
  * [Injection 3 - 130](Web_Exploitation/Injection_3)
  * [Injection 4 - 150](Web_Exploitation/Injection_4)
+ * [Internet Inspection - 30](Web_Exploitation/Internet_Inspection)
  * [Javascrypt - 40](Web_Exploitation/Javascrypt)
  * [Make a Face - 100](Web_Exploitation/Make_a_Face)
  * [Massive Fail - 120](Web_Exploitation/Massive_Fail)
  * [No Comment - 20](Web_Exploitation/No_Comment)
  * [Potentially Hidden Password - 100](Web_Exploitation/Potentially_Hidden_Password)
  * [secure_page_service - 100](Web_Exploitation/secure_page_service)
+  * [Toaster Control - 50](Web_Exploitation/Toaster_Control)
