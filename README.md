@@ -14,6 +14,7 @@ Personal Solutions
 ## Cryptography
  * [Caesar - 20](Cryptography/Caesar)
  * [ECC - 100](Cryptography/ECC)
+ * [Low Entropy - 110](Cryptography/Low_Entropy)
  * [Repeated XOR - 70](Cryptography/Repeated_XOR)
  * [RSA - 80](Cryptography/RSA)
  * [Substitution - 50](Cryptography/Substitution)
