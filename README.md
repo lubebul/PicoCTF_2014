@@ -42,7 +42,7 @@ Personal Solutions
  * [Bit Puzzle - 130](Reverse_Engineering/Bit_Puzzle)
  * [Cyborg Secrets - 80](Reverse_Engineering/Cyborg_Secrets)
  * [Function Address - 60](Reverse_Engineering/Function_Address)
- * [Netsino - 120](Netsino)
+ * [Netsino - 120](Reverse_Engineering/Netsino)
  * [Tick Tock - 90](Reverse_Engineering/Tick_Tock)
  * [Towers of Toast - 90](Reverse_Engineering/Towers_Of_Toast)
 
