@@ -1,7 +1,7 @@
 # Low Entropy
 [server產生RSA金鑰程式](server.py)，只使用了30個質數來生成 => 只有`30*29`種組合
  * 使用`pexpect`和 `vuln2014.picoctf.com:51818`互動，重建出30個質數
- * [擷取到的封包](intercepted_message)中，可以抽出目標那次使用的[key](key)，和[傳送的資料](message)
+ * [擷取到的封包](intercepted_message.pcap)中，可以抽出目標那次使用的[key](key)，和[傳送的資料](message)
  * RSA解密，已知`e = 65537`
   * `p`, `q`可以由建出的30個質數因式分解key得出
   * 使用`sage`，可以快速算出d = e的modular inverse
